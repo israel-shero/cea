@@ -24,3 +24,9 @@ This repository is a scientific computing library (CEA). Follow these rules:
 - Prefer established workflows:
   - Configure/build with `cmake --preset dev` and `cmake --build build-dev` when appropriate.
   - Use focused tests first, then broader test runs when numerical behavior may be affected.
+
+## Permanent branch policy
+
+- `dev` is the primary development and integration branch. Start task branches from `dev` and target ordinary development pull requests to `dev`. Tested, scoped changes may be merged into `dev` without a separate owner approval for each merge, subject to existing GitHub permissions, required checks, review rules and task-claim controls. Never bypass protections or approve your own PR to satisfy required review.
+- `main` is the stable milestone branch. Promote coherent, tested integration milestones from `dev` to `main` by a deliberate pull request; require explicit owner approval. Do not make routine development commits to `main`.
+- Preserve both branches and their history. Do not force-push, delete either branch, or alter permissions or rulesets without explicit authorization. Existing trusted workflow dispatch refs are separate from development PR targets; do not change privileged workflow execution refs without a security review.
